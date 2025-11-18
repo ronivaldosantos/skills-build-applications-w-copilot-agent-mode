@@ -20,14 +20,29 @@ const Teams = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Teams</h2>
-      <ul className="list-group">
-        {teams.map((team, idx) => (
-          <li key={idx} className="list-group-item">
-            {team.name} - {team.description}
-          </li>
-        ))}
-      </ul>
+      <h2 className="mb-4 display-6 text-info">Teams</h2>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teams.map((team, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{team.name}</td>
+                  <td>{team.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

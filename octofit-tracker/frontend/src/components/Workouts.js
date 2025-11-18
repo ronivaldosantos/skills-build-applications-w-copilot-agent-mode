@@ -20,14 +20,31 @@ const Workouts = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Workouts</h2>
-      <ul className="list-group">
-        {workouts.map((workout, idx) => (
-          <li key={idx} className="list-group-item">
-            {workout.user} - {workout.description} ({workout.date})
-          </li>
-        ))}
-      </ul>
+      <h2 className="mb-4 display-6 text-danger">Workouts</h2>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>#</th>
+                <th>User</th>
+                <th>Description</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {workouts.map((workout, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{workout.user}</td>
+                  <td>{workout.description}</td>
+                  <td>{workout.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
